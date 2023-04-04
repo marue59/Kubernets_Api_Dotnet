@@ -5,7 +5,7 @@ kind: Deployment
 # on spécifie quel type de ressource on est en train de creer
 
 metadata:
-  name: mon-site-web-deployment
+  name: app-dotnet-deployment
   # on spécifie via les meta-données ke nom qu'aura notre déploiement dans le cluster
 
 spec: # On defini ensuite les spécificités du / des pods 
@@ -20,7 +20,7 @@ spec: # On defini ensuite les spécificités du / des pods
     spec:
       containers: # On defini ensuite les conteneurs de notre pod
         - name: mon-api-dotnet # on donne le nom du conteneur
-          image: 0811198720119005/dotnet-docker # on specifie l'image du conteneur
+          image: 0811198720119005/dotnet-docker:latest # on specifie l'image du conteneur
           resources: # On specifie les ressources 
             limits: # On fixe les limites
               memory: "128Mi" # De RAM

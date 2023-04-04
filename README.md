@@ -42,10 +42,12 @@ docker push 0811198720119005/dotnet-docker
 ```
 
 ## Création du cluster K8s et du service : 
+Pour pouvoir lancer notre image sur Kubernetes, il nous faut avoir un cluster. Dans notre cas, nous utiliserons minikube:
 
 ```  
-minikube start
+minikube start --driver docker
 ```
+La création d'un service de type LoadBalancer permettant d'atteindre l'une des 5 replicas en cas de crash / restart de l'un de nos pods.
 
 ```  
 kubectl apply -f ./ressources-files/deployment.yml,./ressources-files/service.yml
@@ -59,8 +61,12 @@ kubectl get deployment
 kubectl get pods 
 ```
 
-```  
 ```
+minikube service mon-api-dotnet-service 
+```
+
+Il ne nous reste plus qu'a essayer d'atteindre l'endpoint /WeatherForecast de notre API via l'ajout en suffixe de l'adresse générée par minikube de cette route.
+
 ## Minikube ++ 
 
 [![Actions Status](https://github.com/kubernetes/minikube/workflows/build/badge.svg)](https://github.com/kubernetes/minikube/actions)
