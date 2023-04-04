@@ -4,7 +4,7 @@ metadata: # les meta données de la ressource
   name: mon-api-dotnet-service
 spec:
   selector: # on selectionne le label du deployement (ils doivent corressondre avec ceux des pods)
-    app: mon-api-dotnet
+    app: app-dotnet-deployment
   type: LoadBalancer # on def le type de service
   ports: # on defini le port forwarding (port -> targetPort)
   - port: 80
