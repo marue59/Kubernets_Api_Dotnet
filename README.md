@@ -11,7 +11,7 @@ Le build se fera via l'utilisation de l'image mcr.microsoft.com/dotnet/sdk:7.0 a
 git init
 ```
 ```
-git clone https://github.com/marue59/Kubernetes_ApiDotNet.git
+git clone https://github.com/marue59/Kubernets_Api_Dotnet.git
 ```
 
 ## Comment créer l'image sur son PC :
