@@ -29,16 +29,16 @@ docker run --name dotnet-container -d -p 80:80 dotnet-docker
 ## Création de l'image sur Dockerhub aprés avoir crée un repository
 
 ```
-docker build -t 0811198720119005/******** .
+docker build -t 0811198720119005/dotnet-docker .
 ```
 ```
-docker tag 0811198720119005/****** new-repo:0811198720119005
+docker tag 0811198720119005/dotnet-docker new-repo:0811198720119005
 ```
 ```
 docker login
 ```
 ```
-docker push ****
+docker push 0811198720119005/dotnet-docker
 ```
 
 ## Création du cluster K8s et du service : 
