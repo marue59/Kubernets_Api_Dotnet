@@ -1,0 +1,20 @@
+Faites en sorte, depuis l'API DotNet envoyée plus haut, de faire en sorte de pouvoir, au sein d'un cluster, 
+avoir 5 replicas de notre API. 
+Cette configuration sera gérée dans kubernetes via l'utilisation de deux fichiers de ressources: 
+deployment.yml et service.yml qui serviront à la mise en place du cluster. 
+ 
+Pour que ce cluster soit possible, il vous faut 
+
+dans un premier temps créer l'image à partir de l'application envoyée. 
+Cette image sera créée via deux étapes: 
+Le build se fera via l'utilisation de l'image  
+mcr.microsoft.com/dotnet/sdk:7.0 
+alors que la publication se fera via l'utilisation de l'image mcr.microsoft.com/dotnet/aspnet
+ 
+Pour le dockerfile, n'oubliez pas de respecter l'utilisation des commandes suivantes : 
+dotnet restore Docker.Dotnet.csproj
+ pour installer les dépendancesdotnet publish 
+ -o /app -c Release Docker.Dotnet.csproj pour builder l'application
+ 
+ dotnet Docker.Dotnet.dll pour exécuter le serveur web
+
