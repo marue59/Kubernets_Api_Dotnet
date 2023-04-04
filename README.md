@@ -44,8 +44,23 @@ docker push 0811198720119005/dotnet-docker
 ## Création du cluster K8s et du service : 
 
 ```  
+minikube start
 ```
 
+```  
+kubectl apply -f ./ressources-files/deployment.yml,./ressources-files/service.yml
+```
+
+```  
+kubectl get deployment
+```
+
+``` 
+kubectl get pods 
+```
+
+```  
+```
 ## Minikube ++ 
 
 [![Actions Status](https://github.com/kubernetes/minikube/workflows/build/badge.svg)](https://github.com/kubernetes/minikube/actions)
